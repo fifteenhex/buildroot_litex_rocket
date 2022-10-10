@@ -1,0 +1,17 @@
+PATH=../riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14/bin/:$PATH python3 -m litex_boards.targets.sqrl_acorn --build --with-pcie --variant=cle-215 --driver --uart-name=crossover --cpu-type=rocket --cpu-variant=full
+
+With SD card reader
+
+LITEX_ENV_VIVADO=/media/fatboy/xilinx/Vivado/2020.1/ \
+PATH=../riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14/bin/:$PATH \
+	python3 \
+	-m litex_boards.targets.sqrl_acorn \
+	--build \
+	--variant=cle-215 \
+	--with-pcie \
+	--with-spi-sdcard \
+	--uart-name=crossover \
+	--cpu-type=rocket \
+	--cpu-variant=full \
+	--driver \
+	--csr-json=rocketlinux.json
